@@ -12,7 +12,7 @@ class CalcTests(SimpleTestCase):
     """test adding numbers """
     res = calc.add(5, 6)
 
-    self.assertEqual(res, 1 1)
+    self.assertEqual(res, 11)
 
 # use unittest.mock
 # patch -overrides code for tests
