@@ -14,6 +14,6 @@ class CalcTests(SimpleTestCase):
 
     self.assertEqual(res, 1 1)
 
-use unittest.mock
-patch -overrides code for tests
-MagicMock/Mock -Replace real objects
+# use unittest.mock
+# patch -overrides code for tests
+# MagicMock/Mock -Replace real objects
