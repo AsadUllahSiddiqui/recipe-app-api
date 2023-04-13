@@ -1,19 +1,22 @@
 """
-sample test
+Sample tests
 """
 from django.test import SimpleTestCase
 
 from app import calc
 
+
 class CalcTests(SimpleTestCase):
-  """ test the calc modile."""
+    """Test the calc module."""
 
-  def test_add_numbers(self):
-    """test adding numbers """
-    res = calc.add(5, 6)
+    def test_add_numbers(self):
+        """Test adding numbers together."""
+        res = calc.add(5, 6)
 
-    self.assertEqual(res, 11)
+        self.assertEqual(res, 11)
 
-# use unittest.mock
-# patch -overrides code for tests
-# MagicMock/Mock -Replace real objects
+    def test_subtract_numbers(self):
+        """Test subtracting numbers."""
+        res = calc.subtract(10, 15)
+
+        self.assertEqual(res, 5)
