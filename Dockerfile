@@ -4,7 +4,7 @@ LABEL maintainer="Asadullah Siddiqui"
 ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
-COPY ./requirements.dev.txt /temp/requirements.dev.txt
+COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
@@ -17,11 +17,11 @@ RUN python -m venv /py && \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install flake8 && \
     /py/bin/pip install -r /tmp/requirements.txt && \
-    if [$DEV="true"];\
-      then /py/bin/pip install -r /temp/requiremnts.dev.txt;\
+    if [ $DEV = "true" ]; \
+        then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \
     rm -rf /tmp && \
-    apk del.temp-build-deps && \
+    apk del .tmp-build-deps && \
     adduser \
         --disabled-password \
         --no-create-home \
